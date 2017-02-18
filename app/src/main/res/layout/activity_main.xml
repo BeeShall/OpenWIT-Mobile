@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,32 +10,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.MainActivity">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_marginTop="179dp"
-        android:id="@+id/inputUserEmail"
-        android:hint="Email Address"
-        android:singleLine="false"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="serif-monospace"
-        android:textAlignment="center" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/inputPassword"
-        android:hint="Password"
-        android:fontFamily="serif-monospace"
-        android:textAlignment="center"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/inputUserEmail" />
 
     <Button
         android:text="Log In"
@@ -78,16 +53,50 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/inputPassword"
+        android:hint="Password"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
         android:id="@+id/inputUserName"
         android:hint="User Name"
         android:singleLine="false"
-        android:layout_marginBottom="70dp"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="sans-serif-condensed"
         android:textAlignment="center"
         android:selectAllOnFocus="true"
-        android:layout_alignBottom="@+id/inputUserEmail"
-        android:layout_alignStart="@+id/inputUserEmail"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_marginBottom="51dp"
+        android:layout_above="@+id/inputPassword"
+        android:layout_alignStart="@+id/inputPassword" />
+
+    <ImageView
+        app:srcCompat="@mipmap/flower_transpar"
+        android:id="@+id/imgLogo"
+        android:layout_width = "60dp"
+        android:layout_height= "60dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="78dp"
+        android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:text="OpenWIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="18dp"
+        android:id="@+id/txtLogo"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="24sp" />
+
 </RelativeLayout>

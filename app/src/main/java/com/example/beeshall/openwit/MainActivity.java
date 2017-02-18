@@ -1,5 +1,6 @@
 package com.example.beeshall.openwit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,12 +39,24 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     body.put("userName", userName.getText());
                     body.put("password", password.getText());
+
                     JsonObjectRequest jsObjRequest = new JsonObjectRequest
                             (Request.Method.POST, url, body, new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject response) {
                                     Log.v("Response",response.toString());
+                                    //Log.v("Cookies", response.)
+                                    Intent newIntent = new Intent(MainActivity.this, SearchActivity.class);
+                                    try {
+
+                                        newIntent.putExtra("mongoid", response.get("mongoid").toString());
+                                        startActivity(newIntent);
+                                    }
+                                    catch (JSONException e){
+                                        System.out.println("Exception while creating JSON");
+
+                                    }
                                 }
                             }, new Response.ErrorListener() {
                                 @Override
@@ -66,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent newIntent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(newIntent);
+
             }
         });
 

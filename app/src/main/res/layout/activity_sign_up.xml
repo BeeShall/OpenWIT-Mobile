@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_sign_up"
     android:layout_width="match_parent"
@@ -9,5 +10,91 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.SignUpActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="125dp"
+        android:id="@+id/txtUserName"
+        android:hint="User Name"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtPassword"
+        android:inputType="textPassword|textVisiblePassword"
+        android:hint="Password"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="165dp"
+        android:layout_below="@+id/txtUserName"
+        android:layout_alignStart="@+id/txtUserName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_below="@+id/txtUserName"
+        android:layout_alignStart="@+id/txtUserName"
+        android:layout_marginTop="31dp"
+        android:id="@+id/txtEmail"
+        android:hint="Email"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/txtEmail"
+        android:id="@+id/txtZip"
+        android:hint="Zip Code"
+        android:inputType="textPostalAddress"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPassword"
+        android:layout_marginTop="49dp"
+        android:id="@+id/btnSignUp"
+        android:layout_alignEnd="@+id/txtPassword"
+        android:layout_alignStart="@+id/txtPassword"
+        android:text="Sign Up"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textColor="#FFFFFF"
+        android:background="#ff007f" />
+
+    <ImageView
+        app:srcCompat="@mipmap/flower_transpar"
+        android:id="@+id/imgLogo"
+        android:layout_width = "60dp"
+        android:layout_height= "60dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="78dp"
+        android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:text="OpenWIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="18dp"
+        android:id="@+id/txtLogo"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="24sp" />
 
 </RelativeLayout>

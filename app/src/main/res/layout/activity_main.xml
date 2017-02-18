@@ -10,8 +10,84 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.MainActivity">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_marginTop="179dp"
+        android:id="@+id/inputUserEmail"
+        android:hint="Email Address"
+        android:singleLine="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="serif-monospace"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/inputPassword"
+        android:hint="Password"
+        android:fontFamily="serif-monospace"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/inputUserEmail" />
+
+    <Button
+        android:text="Log In"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogIn"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:background="#ff007f"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/inputPassword"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="OR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="31dp"
+        android:id="@+id/text"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/btnLogIn"
+        android:layout_alignStart="@+id/inputPassword" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegister"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_alignBaseline="@+id/text"
+        android:layout_alignBottom="@+id/text"
+        android:layout_alignEnd="@+id/btnLogIn"
+        android:textColor="#ff007f" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/inputUserName"
+        android:hint="User Name"
+        android:singleLine="false"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="serif-monospace"
+        android:textAlignment="center"
+        android:selectAllOnFocus="true"
+        android:layout_alignBottom="@+id/inputUserEmail"
+        android:layout_alignStart="@+id/inputUserEmail"
+        android:textAllCaps="false" />
 </RelativeLayout>

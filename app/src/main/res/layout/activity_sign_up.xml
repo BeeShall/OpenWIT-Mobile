@@ -50,18 +50,6 @@
         android:textAlignment="center"
         android:fontFamily="sans-serif-condensed" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txtEmail"
-        android:id="@+id/txtZip"
-        android:hint="Zip Code"
-        android:inputType="textPostalAddress"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,5 +84,18 @@
         android:id="@+id/txtLogo"
         android:fontFamily="sans-serif-condensed"
         android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtZip"
+        android:hint="Zip Code"
+        android:inputType="textPostalAddress"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignStart="@+id/txtEmail"
+        android:layout_marginTop="19dp" />
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,5 +10,39 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.SearchActivity">
+
+    <ImageView
+        app:srcCompat="@mipmap/flower_transpar"
+        android:id="@+id/imgLogo"
+        android:layout_width = "50dp"
+        android:layout_height= "50dp"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginRight="351dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/txtLogo"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:text="OpenWIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLogo"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="18sp"
+        android:layout_marginEnd="136dp"
+        android:layout_alignBottom="@+id/imgLogo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp" />
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:layout_below="@+id/txtLogo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="81dp" />
 
 </RelativeLayout>

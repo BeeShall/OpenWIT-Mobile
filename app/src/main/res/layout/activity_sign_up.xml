@@ -77,13 +77,13 @@
         android:background="#ff007f" />
 
     <ImageView
-        app:srcCompat="@mipmap/flower_transpar"
-        android:id="@+id/imgLogo"
-        android:layout_width = "60dp"
-        android:layout_height= "60dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="78dp"
-        android:layout_gravity="center_horizontal|top" />
+    app:srcCompat="@mipmap/flower_transpar"
+    android:id="@+id/imgLogo"
+    android:layout_width = "60dp"
+    android:layout_height= "60dp"
+    android:layout_marginEnd="201dp"
+    android:layout_marginBottom="78dp"
+    android:layout_gravity="center_horizontal|top" />
 
     <TextView
         android:text="OpenWIT"

@@ -3,7 +3,6 @@ package com.example.beeshall.openwit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,6 @@ import android.widget.EditText;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,17 +38,15 @@ public class MainActivity extends AppCompatActivity {
                     body.put("userName", userName.getText());
                     body.put("password", password.getText());
 
-                    JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                    ObjectRequest jsObjRequest = new ObjectRequest
                             (Request.Method.POST, url, body, new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject response) {
-                                    Log.v("Response",response.toString());
-                                    //Log.v("Cookies", response.)
                                     Intent newIntent = new Intent(MainActivity.this, SearchActivity.class);
                                     try {
-
-                                        newIntent.putExtra("mongoid", response.get("mongoid").toString());
+                                        String sid = response.get("set-cookie").toString().split(";")[0].split("=")[1];
+                                        newIntent.putExtra("session", sid);
                                         startActivity(newIntent);
                                     }
                                     catch (JSONException e){

@@ -25,15 +25,16 @@ public class ObjectRequest extends JsonObjectRequest {
     @Override
     protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
         Map<String, String> responseHeaders = response.headers;
+
         Response<JSONObject> resp = super.parseNetworkResponse(response);
-        for(String key: responseHeaders.keySet()){
+
             try {
-                resp.result.put(key, responseHeaders.get(key));
+                resp.result.put("headers", responseHeaders);
             }
             catch (JSONException e){
                 System.out.println(e.getMessage());
             }
-        }
+
 
         return resp;
     }

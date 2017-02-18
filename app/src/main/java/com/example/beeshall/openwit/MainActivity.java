@@ -3,9 +3,11 @@ package com.example.beeshall.openwit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -13,6 +15,8 @@ import com.android.volley.VolleyError;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         logInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = Globals.serverAddress +"hi";
+                String url = Globals.serverAddress +"login_mobile";
                 JSONObject body = new JSONObject();
                 try {
-                    body.put("userName", userName.getText());
+                    body.put("username", userName.getText());
                     body.put("password", password.getText());
 
                     ObjectRequest jsObjRequest = new ObjectRequest
@@ -45,9 +49,16 @@ public class MainActivity extends AppCompatActivity {
                                 public void onResponse(JSONObject response) {
                                     Intent newIntent = new Intent(MainActivity.this, SearchActivity.class);
                                     try {
-                                        String sid = response.get("set-cookie").toString().split(";")[0].split("=")[1];
-                                        newIntent.putExtra("session", sid);
-                                        startActivity(newIntent);
+                                        if ((boolean)response.get("success")) {
+                                            Map<String, String> headers = (Map<String, String>) response.get("headers");
+                                            String sid = headers.get("set-cookie").toString().split(";")[0].split("=")[1];
+                                            Log.v("session", sid);
+                                            newIntent.putExtra("session", sid);
+                                            startActivity(newIntent);
+                                        }
+                                        else{
+                                            Toast.makeText(MainActivity.this,"Login failed",Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                     catch (JSONException e){
                                         System.out.println("Exception while creating JSON");

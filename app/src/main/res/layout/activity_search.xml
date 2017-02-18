@@ -11,25 +11,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.SearchActivity">
 
-    <ImageView
-        app:srcCompat="@mipmap/flower_transpar"
-        android:id="@+id/imgLogo"
-        android:layout_width = "60dp"
-        android:layout_height= "60dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="78dp"
-        android:layout_gravity="center_horizontal|top" />
-
-    <TextView
-        android:text="OpenWIT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="18dp"
-        android:id="@+id/txtLogo"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp" />
 
 </RelativeLayout>

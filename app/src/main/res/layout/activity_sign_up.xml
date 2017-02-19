@@ -56,7 +56,9 @@
         android:layout_marginTop="18dp"
         android:id="@+id/txtLogo"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -96,7 +98,8 @@
         android:layout_marginBottom="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/txtConfPass"
-        android:layout_alignEnd="@+id/txtConfPass" />
+        android:layout_alignEnd="@+id/txtConfPass"
+        android:textSize="18sp" />
 
     <EditText
         android:layout_width="wrap_content"

@@ -15,6 +15,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -127,9 +128,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
 
-        LatLng sydney = new LatLng(40.7554704, -73.9788531);
+        LatLng newYork = new LatLng(40.7554704, -73.9788531);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(newYork));
+
     }
 
     public void makeMap(JSONArray information) throws JSONException{
@@ -144,14 +146,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for(int i =0; i<information.length(); i++){
             String _title = (String) information.getJSONObject(i).get("title");
             String description = (String) information.getJSONObject(i).get("location");
+            String details = (String)information.getJSONObject(i).get("description");
+            description = description + details;
             JSONObject location = (JSONObject) information.getJSONObject(i).get("coords");
             double lat = Double.parseDouble(location.get("lat").toString());
             double lng = Double.parseDouble(location.get("lng").toString());
             coord.add(new LatLng(lat, lng));
             titles.add(_title);
             descr.add(description);
-            markers.add(mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(_title).snippet(description)));
+            markers.add(mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(lat, lng))
+                    .title(_title)
+                    .snippet(description)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))));
         }
+
     }
 
 }

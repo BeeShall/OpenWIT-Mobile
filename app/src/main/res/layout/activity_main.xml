@@ -12,32 +12,6 @@
     tools:context="com.example.beeshall.openwit.MainActivity">
 
     <Button
-        android:text="Log In"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLogIn"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:background="#ff007f"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/inputPassword"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="14sp"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="OR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="31dp"
-        android:id="@+id/text"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_below="@+id/btnLogIn"
-        android:layout_alignStart="@+id/inputPassword" />
-
-    <Button
         android:text="Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,10 +19,27 @@
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_alignBaseline="@+id/text"
-        android:layout_alignBottom="@+id/text"
-        android:layout_alignEnd="@+id/btnLogIn"
-        android:textColor="#ff007f" />
+        android:textColor="#ff007f"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:text="Log In"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogIn"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:background="#ff007f"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:layout_above="@+id/btnRegister"
+        android:layout_marginBottom="50dp"
+        android:layout_alignEnd="@+id/inputPassword"
+        android:layout_alignStart="@+id/inputPassword" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,8 +50,10 @@
         android:hint="Password"
         android:fontFamily="sans-serif-condensed"
         android:textAlignment="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/btnLogIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:textSize="24sp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -74,30 +67,44 @@
         android:textAlignment="center"
         android:selectAllOnFocus="true"
         android:textAllCaps="false"
-        android:layout_marginBottom="51dp"
+        android:textSize="24sp"
         android:layout_above="@+id/inputPassword"
-        android:layout_alignStart="@+id/inputPassword" />
+        android:layout_alignStart="@+id/inputPassword"
+        android:layout_marginBottom="48dp"
+        android:layout_alignEnd="@+id/inputPassword" />
 
     <ImageView
         app:srcCompat="@mipmap/flower_transpar"
         android:id="@+id/imgLogo"
-        android:layout_width = "60dp"
-        android:layout_height= "60dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginBottom="78dp"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_width = "120dp"
+        android:layout_height= "120dp"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/txtLogo"
+        android:layout_marginEnd="27dp" />
+
+    <TextView
+        android:text="OR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignBaseline="@+id/btnRegister"
+        android:layout_alignBottom="@+id/btnRegister"
+        android:layout_toStartOf="@+id/btnRegister"
+        android:layout_marginEnd="9dp" />
 
     <TextView
         android:text="OpenWIT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="18dp"
         android:id="@+id/txtLogo"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp" />
+        android:textSize="48sp"
+        android:textStyle="normal|bold"
+        android:layout_alignBottom="@+id/imgLogo"
+        android:layout_alignEnd="@+id/inputUserName" />
 
 
 </RelativeLayout>

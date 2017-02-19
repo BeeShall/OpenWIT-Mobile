@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onResponse(JSONObject response) {
-                                    Intent newIntent = new Intent(MainActivity.this, SearchActivity.class);
+                                    Intent newIntent = new Intent(MainActivity.this, MapsActivity.class);
                                     try {
                                         if ((boolean)response.get("success")) {
 

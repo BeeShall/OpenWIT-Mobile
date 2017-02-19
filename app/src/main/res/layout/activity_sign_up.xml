@@ -27,20 +27,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/txtPassword"
-        android:inputType="textPassword|textVisiblePassword"
-        android:hint="Password"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="165dp"
-        android:layout_below="@+id/txtUserName"
-        android:layout_alignStart="@+id/txtUserName"
-        android:textAlignment="center" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="textEmailAddress|textWebEmailAddress"
         android:ems="10"
         android:layout_below="@+id/txtUserName"
         android:layout_alignStart="@+id/txtUserName"
@@ -49,20 +36,6 @@
         android:hint="Email"
         android:textAlignment="center"
         android:fontFamily="sans-serif-condensed" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtPassword"
-        android:layout_marginTop="49dp"
-        android:id="@+id/btnSignUp"
-        android:layout_alignEnd="@+id/txtPassword"
-        android:layout_alignStart="@+id/txtPassword"
-        android:text="Sign Up"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold"
-        android:textColor="#FFFFFF"
-        android:background="#ff007f" />
 
     <ImageView
     app:srcCompat="@mipmap/flower_transpar"
@@ -88,14 +61,54 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="34dp"
+        android:id="@+id/txtPassword"
+        android:layout_below="@+id/txtZip"
+        android:layout_alignStart="@+id/txtZip"
+        android:hint="Password"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/txtConfPass"
+        android:textAlignment="center"
+        android:layout_below="@+id/txtPassword"
+        android:layout_alignStart="@+id/txtPassword"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignUp"
+        android:text="Sign Up"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textColor="#FFFFFF"
+        android:background="#ff007f"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/txtConfPass"
+        android:layout_alignEnd="@+id/txtConfPass" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/txtZip"
         android:hint="Zip Code"
-        android:inputType="textPostalAddress"
+        android:inputType="textPostalAddress|number"
         android:textAlignment="center"
         android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/txtEmail"
-        android:layout_alignStart="@+id/txtEmail"
-        android:layout_marginTop="19dp" />
+        android:layout_alignStart="@+id/txtEmail" />
 
 </RelativeLayout>

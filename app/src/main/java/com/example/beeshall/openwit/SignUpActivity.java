@@ -24,11 +24,13 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         final EditText userName = (EditText) findViewById(R.id.txtUserName);
-        final EditText email = (EditText) findViewById(R.id.txtPassword);
+        final EditText email = (EditText) findViewById(R.id.txtEmail);
         final EditText zipcode = (EditText) findViewById(R.id.txtZip);
         final EditText password = (EditText) findViewById(R.id.txtPassword);
+        final EditText confPass = (EditText) findViewById(R.id.txtConfPass);
 
         Button register = (Button) findViewById(R.id.btnSignUp);
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

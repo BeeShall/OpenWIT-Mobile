@@ -113,6 +113,30 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        Button act_search = (Button) findViewById(R.id.btnSearchAct);
+        Button act_map = (Button) findViewById(R.id.btnMap);
+        Button act_create = (Button) findViewById(R.id.btnCreateAct);
+
+        act_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchActivity.this, SearchActivity.class));
+            }
+        });
+
+        act_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchActivity.this, MapsActivity.class));
+            }
+        });
+
+        /*act_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SearchActivity.this, CreateActivity.class));
+            }
+        });*/
 
     }
 

@@ -6,6 +6,7 @@
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,4 +16,44 @@
     android:layout_height="match_parent"
     tools:context="com.example.beeshall.openwit.MapsActivity"
     tools:layout="@layout/activity_maps" />
+    <TextView
+        android:id="@+id/latlongLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/txtSearch"
+        android:background="#ff058fff"
+        android:gravity="bottom"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:textColor="#ffffffff" />
+
+    <EditText
+        android:id="@+id/txtSearch"
+        android:layout_width="300dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="14dp"
+        android:hint="  Search Location"
+        android:textColor="#FF4081"
+        android:background="#FFFFFF" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignBaseline="@+id/txtSearch"
+        android:layout_alignBottom="@+id/txtSearch"
+        android:layout_alignRight="@+id/txtSearch"
+        android:background="@drawable/places_ic_search"
+        android:backgroundTint="#FF4081"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        />
 </RelativeLayout>

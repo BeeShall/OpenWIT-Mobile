@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -45,8 +48,11 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         final EditText keywords = (EditText) findViewById(R.id.txtKeyword);
+        final Spinner searchType = (Spinner) findViewById(R.id.spinSearchType);
+
 
         Button search = (Button) findViewById(R.id.btnSearch);
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +62,8 @@ public class SearchActivity extends AppCompatActivity {
                 try {
                     body.put("keywords", keywords.getText());
                     body.put("distance", proximityPicker.getValue()*5);
-
+                    body.put("type", (searchType.getSelectedItem()).toString().toLowerCase());
+                    Log.v("Type ", "" +(searchType.getSelectedItem()).toString());
                     JsonObjectRequest jsObjRequest = new JsonObjectRequest
                             (Request.Method.POST, url, body, new Response.Listener<JSONObject>() {
 
@@ -107,9 +114,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
     }
+
+
 }

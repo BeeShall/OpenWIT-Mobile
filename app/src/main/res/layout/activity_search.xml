@@ -11,38 +11,50 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.beeshall.openwit.SearchActivity">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width = "100dp"
-        android:layout_height= "100dp"
-        android:clickable="true"
-        app:fabSize="mini"
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numProx"
+        android:layout_above="@+id/btnSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textColor="#ff007f"
+        android:ems="10"
+        android:id="@+id/txtKeyword"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="24sp"
+        android:layout_above="@+id/numProx"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:hint="Keyword for Search" />
+
+
+    <ImageView
         app:srcCompat="@mipmap/flower_transpar"
-        android:id="@+id/floatingActionButton"
-        app:backgroundTint="@android:color/background_light"
-        app:elevation="1dp"
-        app:rippleColor="@android:color/transparent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/imgLogo"
+        android:layout_width = "60dp"
+        android:layout_height= "60dp"
+        android:layout_marginEnd="201dp"
+        android:layout_marginBottom="78dp"
+        android:layout_gravity="center_horizontal|top" />
 
     <TextView
         android:text="OpenWIT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="18dp"
         android:id="@+id/txtLogo"
         android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp"
-        android:layout_alignBottom="@+id/floatingActionButton"
-        android:layout_toEndOf="@+id/floatingActionButton" />
-
-    <TextView
-        android:text="Search :"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblSearch"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/floatingActionButton"
-        android:layout_alignParentStart="true" />
+        android:textSize="24sp" />
 
     <Button
         android:text="Discover"
@@ -55,34 +67,20 @@
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
         android:textSize="24sp"
+        android:layout_marginBottom="72dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="23dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Keyword for Search"
-        android:textColor="#ff007f"
-        android:ems="10"
-        android:layout_below="@+id/lblSearch"
-        android:layout_marginTop="49dp"
-        android:id="@+id/txtKeyword"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/floatingActionButton"
+        android:layout_above="@+id/txtKeyword"
         android:layout_alignParentStart="true"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp" />
+        android:id="@+id/drop_menu"
+        android:scrollbarSize="20dp"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:soundEffectsEnabled="false" />
 
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:id="@+id/numProx"
-        android:layout_below="@+id/txtKeyword"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

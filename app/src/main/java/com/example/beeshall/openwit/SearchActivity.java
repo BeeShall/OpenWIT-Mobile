@@ -29,7 +29,6 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-
         Intent intent = getIntent();
         final String user = (String) intent.getExtras().get("user");
 

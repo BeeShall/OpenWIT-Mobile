@@ -11,6 +11,7 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,7 +20,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity {
@@ -85,12 +86,15 @@ public class SearchActivity extends AppCompatActivity {
                             }){
                         @Override
                         public Map<String, String> getHeaders() throws AuthFailureError {
-                            Map<String,String> headers = new Hashtable<String, String>();
+                            Map<String,String> headers = new HashMap<String, String>();
                             headers.put("user",user);
                             return headers;
                         }
                     };
-
+                    jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
+                            0,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                     QueueSingleton.getInstance(SearchActivity.this).addToRequestQueue(jsObjRequest);
 
                 }

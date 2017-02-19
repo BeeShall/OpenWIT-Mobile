@@ -5,5 +5,5 @@ package com.example.beeshall.openwit;
  */
 
 public final class Globals {
-    public static final String  serverAddress = "http://976f9c4b.ngrok.io/";
+    public static final String  serverAddress = "http://ab125c7c.ngrok.io/";
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">OpenWIT</string>
     <string name="title_activity_maps">Map</string>
+    <string name="gApiKey">AIzaSyCBqDjWswy1NamjWhw1p23ECDDfLXSUz_c</string>
 </resources>

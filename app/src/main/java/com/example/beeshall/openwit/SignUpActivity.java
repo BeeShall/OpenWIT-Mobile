@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
                     body.put("email", email.getText());
                     body.put("zip", zipcode.getText());
 
-                    ObjectRequest jsObjRequest = new ObjectRequest
+                    JsonObjectRequest jsObjRequest = new JsonObjectRequest
                             (Request.Method.POST, url, body, new Response.Listener<JSONObject>() {
 
                                 @Override

@@ -12,11 +12,10 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     body.put("username", userName.getText());
                     body.put("password", password.getText());
 
-                    ObjectRequest jsObjRequest = new ObjectRequest
+                    JsonObjectRequest jsObjRequest = new JsonObjectRequest
                             (Request.Method.POST, url, body, new Response.Listener<JSONObject>() {
 
                                 @Override
@@ -50,10 +49,9 @@ public class MainActivity extends AppCompatActivity {
                                     Intent newIntent = new Intent(MainActivity.this, SearchActivity.class);
                                     try {
                                         if ((boolean)response.get("success")) {
-                                            Map<String, String> headers = (Map<String, String>) response.get("headers");
-                                            String sid = headers.get("set-cookie").toString().split(";")[0].split("=")[1];
-                                            Log.v("session", sid);
-                                            newIntent.putExtra("session", sid);
+
+                                            Log.v("id", response.toString());
+                                            newIntent.putExtra("user", response.get("user").toString() );
                                             startActivity(newIntent);
                                         }
                                         else{
